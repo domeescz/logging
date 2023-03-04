@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <None Remove="Quartz" />
+    <None Remove="Quartz.Serialization.Json" />
+    <None Remove="Models\" />
+    <None Remove="Microsoft.Data.SqlClient" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Quartz" Version="3.6.2" />
+    <PackageReference Include="Quartz.Serialization.Json" Version="3.6.2" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+</Project>
